@@ -1,0 +1,230 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### MovementType
+# @name MovementType_GET
+GET {{server}}/movements/MovementType
+Authorization: Basic {{username}}:{{password}}
+
+
+### MovementType
+# @name MovementType_POST
+POST {{server}}/movements/MovementType
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "16954134-db68-4b57-80cd-d1c2ff6b6a4d",
+  "description": "description-16954134",
+  "createdAt": "2001-05-19T02:00:00.000Z",
+  "createdBy": "createdBy.a3dw6@example.net",
+  "modifiedAt": "2006-01-29T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.a3dw6@example.net"
+}
+
+
+### MovementType
+# @name MovementType_PATCH
+PATCH {{server}}/movements/MovementType/16954134-db68-4b57-80cd-d1c2ff6b6a4d
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "16954134-db68-4b57-80cd-d1c2ff6b6a4d",
+  "description": "description-16954134",
+  "createdAt": "2001-05-19T02:00:00.000Z",
+  "createdBy": "createdBy.a3dw6@example.net",
+  "modifiedAt": "2006-01-29T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.a3dw6@example.net"
+}
+
+
+### MovementType
+# @name MovementType_DELETE
+DELETE {{server}}/movements/MovementType/16954134-db68-4b57-80cd-d1c2ff6b6a4d
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Wallats
+# @name Wallats_GET
+GET {{server}}/movements/Wallats
+Authorization: Basic {{username}}:{{password}}
+
+
+### Wallats
+# @name Wallats_POST
+POST {{server}}/movements/Wallats
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "18734486-ddd6-46f2-92db-396294cbe474",
+  "name": "name-18734486",
+  "createdAt": "2020-05-30T02:00:00.000Z",
+  "createdBy": "createdBy.b5jme@example.com",
+  "modifiedAt": "2019-08-06T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.b5jme@example.com"
+}
+
+
+### Wallats
+# @name Wallats_PATCH
+PATCH {{server}}/movements/Wallats/18734486-ddd6-46f2-92db-396294cbe474
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "18734486-ddd6-46f2-92db-396294cbe474",
+  "name": "name-18734486",
+  "createdAt": "2020-05-30T02:00:00.000Z",
+  "createdBy": "createdBy.b5jme@example.com",
+  "modifiedAt": "2019-08-06T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.b5jme@example.com"
+}
+
+
+### Wallats
+# @name Wallats_DELETE
+DELETE {{server}}/movements/Wallats/18734486-ddd6-46f2-92db-396294cbe474
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Categories
+# @name Categories_GET
+GET {{server}}/movements/Categories
+Authorization: Basic {{username}}:{{password}}
+
+
+### Categories
+# @name Categories_POST
+POST {{server}}/movements/Categories
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "13529868-d89c-43ce-ac45-56bb40dcf6ef",
+  "name": "name-13529868",
+  "icon": "icon-13529868",
+  "color": "r-13529868",
+  "createdAt": "2017-12-29T02:00:00.000Z",
+  "createdBy": "createdBy.81zpo@example.com",
+  "modifiedAt": "2020-04-29T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.81zpo@example.com"
+}
+
+
+### Categories
+# @name Categories_PATCH
+PATCH {{server}}/movements/Categories/13529868-d89c-43ce-ac45-56bb40dcf6ef
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "13529868-d89c-43ce-ac45-56bb40dcf6ef",
+  "name": "name-13529868",
+  "icon": "icon-13529868",
+  "color": "r-13529868",
+  "createdAt": "2017-12-29T02:00:00.000Z",
+  "createdBy": "createdBy.81zpo@example.com",
+  "modifiedAt": "2020-04-29T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.81zpo@example.com"
+}
+
+
+### Categories
+# @name Categories_DELETE
+DELETE {{server}}/movements/Categories/13529868-d89c-43ce-ac45-56bb40dcf6ef
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Movements
+# @name Movements_GET
+GET {{server}}/movements/Movements
+Authorization: Basic {{username}}:{{password}}
+
+
+### Movements Drafts GET
+# @name Movements_Drafts_GET
+GET {{server}}/movements/Movements?$filter=(IsActiveEntity eq false)
+Authorization: Basic {{username}}:{{password}}
+
+
+### Movements Draft POST
+# @name Movements_Draft_POST
+POST {{server}}/movements/Movements
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "name": "name-3567729",
+  "amount": 98141745.49,
+  "date": "2013-02-04",
+  "type": {
+    "ID": "16954134-db68-4b57-80cd-d1c2ff6b6a4d"
+  },
+  "type_name": "type_name-3567729",
+  "wallat": {
+    "ID": "18734486-ddd6-46f2-92db-396294cbe474"
+  },
+  "wallat_name": "wallat_name-3567729",
+  "category": {
+    "ID": "13529868-d89c-43ce-ac45-56bb40dcf6ef"
+  },
+  "category_name": "category_name-3567729",
+  "criticality": 8,
+  "note": "note-3567729"
+}
+
+
+### Result from POST request above
+@draftID={{Movements_Draft_POST.response.body.$.ID}}
+
+
+### Movements Draft PATCH
+# @name Movements_Draft_Patch
+PATCH {{server}}/movements/Movements(ID={{draftID}},IsActiveEntity=false)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "name": "name-3567729",
+  "amount": 98141745.49,
+  "date": "2013-02-04",
+  "type": {
+    "ID": "16954134-db68-4b57-80cd-d1c2ff6b6a4d"
+  },
+  "type_name": "type_name-3567729",
+  "wallat": {
+    "ID": "18734486-ddd6-46f2-92db-396294cbe474"
+  },
+  "wallat_name": "wallat_name-3567729",
+  "category": {
+    "ID": "13529868-d89c-43ce-ac45-56bb40dcf6ef"
+  },
+  "category_name": "category_name-3567729",
+  "criticality": 8,
+  "note": "note-3567729"
+}
+
+
+### Movements Draft Prepare
+# @name Movements_Draft_Prepare
+POST {{server}}/movements/Movements(ID={{draftID}},IsActiveEntity=false)/MovementsService.draftPrepare
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### Movements Draft Activate
+# @name Movements_Draft_Activate
+POST {{server}}/movements/Movements(ID={{draftID}},IsActiveEntity=false)/MovementsService.draftActivate
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}

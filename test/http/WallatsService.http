@@ -1,0 +1,67 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Wallats
+# @name Wallats_GET
+GET {{server}}/wallats/Wallats
+Authorization: Basic {{username}}:{{password}}
+
+
+### Wallats Drafts GET
+# @name Wallats_Drafts_GET
+GET {{server}}/wallats/Wallats?$filter=(IsActiveEntity eq false)
+Authorization: Basic {{username}}:{{password}}
+
+
+### Wallats Draft POST
+# @name Wallats_Draft_POST
+POST {{server}}/wallats/Wallats
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "name": "name-3664380",
+  "createdAt": "2005-07-25T02:00:00.000Z",
+  "createdBy": "createdBy.26jgc@example.org",
+  "modifiedAt": "2018-10-07T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.26jgc@example.org"
+}
+
+
+### Result from POST request above
+@draftID={{Wallats_Draft_POST.response.body.$.ID}}
+
+
+### Wallats Draft PATCH
+# @name Wallats_Draft_Patch
+PATCH {{server}}/wallats/Wallats(ID={{draftID}},IsActiveEntity=false)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "name": "name-3664380",
+  "createdAt": "2005-07-25T02:00:00.000Z",
+  "createdBy": "createdBy.26jgc@example.org",
+  "modifiedAt": "2018-10-07T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.26jgc@example.org"
+}
+
+
+### Wallats Draft Prepare
+# @name Wallats_Draft_Prepare
+POST {{server}}/wallats/Wallats(ID={{draftID}},IsActiveEntity=false)/WallatsService.draftPrepare
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### Wallats Draft Activate
+# @name Wallats_Draft_Activate
+POST {{server}}/wallats/Wallats(ID={{draftID}},IsActiveEntity=false)/WallatsService.draftActivate
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}

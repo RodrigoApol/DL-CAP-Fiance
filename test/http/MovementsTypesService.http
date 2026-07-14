@@ -1,0 +1,67 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### MovementType
+# @name MovementType_GET
+GET {{server}}/movements-types/MovementType
+Authorization: Basic {{username}}:{{password}}
+
+
+### MovementType Drafts GET
+# @name MovementType_Drafts_GET
+GET {{server}}/movements-types/MovementType?$filter=(IsActiveEntity eq false)
+Authorization: Basic {{username}}:{{password}}
+
+
+### MovementType Draft POST
+# @name MovementType_Draft_POST
+POST {{server}}/movements-types/MovementType
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "description": "description-15190185",
+  "createdAt": "2014-04-06T02:00:00.000Z",
+  "createdBy": "createdBy.91ktl@example.org",
+  "modifiedAt": "2019-08-31T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.91ktl@example.com"
+}
+
+
+### Result from POST request above
+@draftID={{MovementType_Draft_POST.response.body.$.ID}}
+
+
+### MovementType Draft PATCH
+# @name MovementType_Draft_Patch
+PATCH {{server}}/movements-types/MovementType(ID={{draftID}},IsActiveEntity=false)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "description": "description-15190185",
+  "createdAt": "2014-04-06T02:00:00.000Z",
+  "createdBy": "createdBy.91ktl@example.org",
+  "modifiedAt": "2019-08-31T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.91ktl@example.com"
+}
+
+
+### MovementType Draft Prepare
+# @name MovementType_Draft_Prepare
+POST {{server}}/movements-types/MovementType(ID={{draftID}},IsActiveEntity=false)/MovementsTypesService.draftPrepare
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### MovementType Draft Activate
+# @name MovementType_Draft_Activate
+POST {{server}}/movements-types/MovementType(ID={{draftID}},IsActiveEntity=false)/MovementsTypesService.draftActivate
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}

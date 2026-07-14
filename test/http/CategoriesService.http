@@ -1,0 +1,71 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Categories
+# @name Categories_GET
+GET {{server}}/categories/Categories
+Authorization: Basic {{username}}:{{password}}
+
+
+### Categories Drafts GET
+# @name Categories_Drafts_GET
+GET {{server}}/categories/Categories?$filter=(IsActiveEntity eq false)
+Authorization: Basic {{username}}:{{password}}
+
+
+### Categories Draft POST
+# @name Categories_Draft_POST
+POST {{server}}/categories/Categories
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "name": "name-28550716",
+  "icon": "icon-28550716",
+  "color": "r-28550716",
+  "createdAt": "2013-02-14T02:00:00.000Z",
+  "createdBy": "createdBy.gzxvg@example.net",
+  "modifiedAt": "2000-10-03T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.gzxvg@example.com"
+}
+
+
+### Result from POST request above
+@draftID={{Categories_Draft_POST.response.body.$.ID}}
+
+
+### Categories Draft PATCH
+# @name Categories_Draft_Patch
+PATCH {{server}}/categories/Categories(ID={{draftID}},IsActiveEntity=false)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "name": "name-28550716",
+  "icon": "icon-28550716",
+  "color": "r-28550716",
+  "createdAt": "2013-02-14T02:00:00.000Z",
+  "createdBy": "createdBy.gzxvg@example.net",
+  "modifiedAt": "2000-10-03T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.gzxvg@example.com"
+}
+
+
+### Categories Draft Prepare
+# @name Categories_Draft_Prepare
+POST {{server}}/categories/Categories(ID={{draftID}},IsActiveEntity=false)/CategoriesService.draftPrepare
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### Categories Draft Activate
+# @name Categories_Draft_Activate
+POST {{server}}/categories/Categories(ID={{draftID}},IsActiveEntity=false)/CategoriesService.draftActivate
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
