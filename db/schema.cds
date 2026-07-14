@@ -32,8 +32,13 @@ entity Movements : cuid, managed {
     date     : Date;
 
     // Associações
+    @title: 'Tipo de Movimento'
     type     : Association to MovementType;
+
+    @title: 'Carteira'
     wallat   : Association to Wallats;
+
+    @title: 'Categoria'
     category : Association to Categories;
 
     @title: 'Anotação'
