@@ -1,0 +1,1 @@
+using CategoriesService as service from '../../srv/categories-service';
