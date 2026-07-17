@@ -12,13 +12,15 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-app-categories": "cds watch --open com.capfiance.category.appcategories/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-app-categories": "cds watch --open com.capfiance.category.appcategories/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-app-wallats": "cds watch --open com.capfiance.wallat.appwallats/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "workspaces": [
     "app/*"
   ],
   "sapux": [
-    "app/app-categories"
+    "app/app-categories",
+    "app/app-wallats"
   ]
 }
