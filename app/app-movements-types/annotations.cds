@@ -1,0 +1,1 @@
+using MovementsTypesService as service from '../../srv/movements-types-service';
