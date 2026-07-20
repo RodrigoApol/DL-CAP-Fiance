@@ -1,29 +1,30 @@
-using cap.schema as db from '../db/schema';
+using cap.schema from '../db/schema';
 
 @path: '/movements'
 service MovementsService {
+
+    entity MovementType as projection on schema.MovementType;
+    entity Wallets      as projection on schema.Wallets;
+    entity Categories   as projection on schema.Categories;
+
     @UI: {
         SelectionFields : [name],
         LineItem        : [
-            {
-                Value: name,
-                Label: 'Nome'
-            },
+            {Value: name},
             {
                 Value      : amount,
-                Criticality: {$value: criticality},
-                Label      : 'Valor'
+                Criticality: criticality
             },
             {
                 Value: date,
-                Label: 'Data da Movimentação'
+                Label: 'Data'
             },
             {
                 Value: type_name,
-                Label: 'Tipo de Movimento'
+                Label: 'Tipo'
             },
             {
-                Value: wallat_name,
+                Value: wallet_name,
                 Label: 'Carteira'
             },
             {
@@ -34,11 +35,10 @@ service MovementsService {
                 Value: note,
                 Label: 'Anotação'
             }
-
         ],
         Facets          : [{
             $Type : 'UI.ReferenceFacet',
-            Label : 'Detalhes da Movimentação',
+            Label : 'Detalhes',
             Target: '@UI.FieldGroup#Main'
         }],
         FieldGroup #Main: {Data: [
@@ -46,19 +46,26 @@ service MovementsService {
             {Value: amount},
             {Value: date},
             {Value: type_ID},
-            {Value: wallat_ID},
+            {Value: wallet_ID},
             {Value: category_ID},
             {Value: note}
         ]}
     }
-
-    entity MovementType as projection on db.MovementType;
-
-    entity Wallats      as projection on db.Wallats;
-    entity Categories   as projection on db.Categories;
-
-    entity Movements    as
-        projection on db.Movements {
+    entity Movements @(Capabilities: {
+        InsertRestrictions: {
+            $Type: 'Capabilities.InsertRestrictionsType',
+            Insertable
+        },
+        UpdateRestrictions: {
+            $Type: 'Capabilities.UpdateRestrictionsType',
+            Updatable
+        },
+        DeleteRestrictions: {
+            $Type: 'Capabilities.DeleteRestrictionsType',
+            Deletable
+        },
+    })                  as
+        projection on schema.Movements {
             ID,
             name,
             amount,
@@ -83,12 +90,12 @@ service MovementsService {
             type,
             type.description                      as type_name,
             @Common.ValueList      : {
-                Label         : 'Carteiras',
-                CollectionPath: 'Wallats',
+                Label         : 'Carteira',
+                CollectionPath: 'Wallets',
                 Parameters    : [
                     {
                         $Type            : 'Common.ValueListParameterInOut',
-                        LocalDataProperty: 'wallat_ID',
+                        LocalDataProperty: 'wallet_ID',
                         ValueListProperty: 'ID'
                     },
                     {
@@ -98,11 +105,11 @@ service MovementsService {
                 ]
             }
             @Common.TextArrangement: #TextOnly
-            @Common.Text           : wallat_name
-            wallat,
-            wallat.name                           as wallat_name,
+            @Common.Text           : wallet_name
+            wallet,
+            wallet.name                           as wallet_name,
             @Common.ValueList      : {
-                Label         : 'Categorias',
+                Label         : 'Categoria',
                 CollectionPath: 'Categories',
                 Parameters    : [
                     {
@@ -123,7 +130,7 @@ service MovementsService {
             @Common.TextArrangement: #TextOnly
             @Common.Text           : category_name
             category,
-            category.icon || ' ' || category.name as category_name : String(80),
+            category.icon || ' ' || category.name as category_name : String(50),
             case
                 when type.description = 'RECEITA'
                      then 1

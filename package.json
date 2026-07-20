@@ -13,7 +13,10 @@
   "scripts": {
     "start": "cds-serve",
     "watch-app-categories": "cds watch --open com.capfiance.category.appcategories/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-app-wallats": "cds watch --open com.capfiance.wallat.appwallats/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-app-wallats": "cds watch --open com.capfiance.wallat.appwallats/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-app-movements-types": "cds watch --open com.capfiance.movements.types.appmovementstypes/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-app-movements": "cds watch --open com.capfiance.movement.appmovements/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-app-wallets": "cds watch --open com.capfiance.wallet.appwallets/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "workspaces": [
@@ -21,6 +24,11 @@
   ],
   "sapux": [
     "app/app-categories",
-    "app/app-wallats"
+    "app/app-wallats",
+    "app/app-movements-types",
+    "app/app-movements",
+    "app/app-wallets",
+    "app/app-movements",
+    "app/app-movements"
   ]
 }

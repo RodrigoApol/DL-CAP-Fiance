@@ -1,1 +1,0 @@
-using WallatsService as service from '../../srv/wallats-service';

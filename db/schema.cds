@@ -5,7 +5,7 @@ using {
     managed
 } from '@sap/cds/common';
 
-entity Wallats : cuid, managed {
+entity Wallets : cuid, managed {
     @title: 'Nome'
     name : String(50);
 }
@@ -36,7 +36,7 @@ entity Movements : cuid, managed {
     type     : Association to MovementType;
 
     @title: 'Carteira'
-    wallat   : Association to Wallats;
+    wallet   : Association to Wallets;
 
     @title: 'Categoria'
     category : Association to Categories;

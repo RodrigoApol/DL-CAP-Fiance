@@ -1,0 +1,1 @@
+using WalletsService as service from '../../srv/wallets-service';

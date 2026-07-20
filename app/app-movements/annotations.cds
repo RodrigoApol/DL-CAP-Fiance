@@ -1,0 +1,1 @@
+using MovementsService as service from '../../srv/movements-service';

@@ -16,79 +16,79 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "16954134-db68-4b57-80cd-d1c2ff6b6a4d",
-  "description": "description-16954134",
-  "createdAt": "2001-05-19T02:00:00.000Z",
-  "createdBy": "createdBy.a3dw6@example.net",
-  "modifiedAt": "2006-01-29T02:00:00.000Z",
-  "modifiedBy": "modifiedBy.a3dw6@example.net"
+  "ID": "10334021-efb5-4450-a124-8f7f3f3cc5ab",
+  "description": "description-10334021",
+  "createdAt": "2010-06-12T02:00:00.000Z",
+  "createdBy": "createdBy.65hs5@example.org",
+  "modifiedAt": "2000-04-15T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.65hs5@example.net"
 }
 
 
 ### MovementType
 # @name MovementType_PATCH
-PATCH {{server}}/movements/MovementType/16954134-db68-4b57-80cd-d1c2ff6b6a4d
+PATCH {{server}}/movements/MovementType/10334021-efb5-4450-a124-8f7f3f3cc5ab
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "16954134-db68-4b57-80cd-d1c2ff6b6a4d",
-  "description": "description-16954134",
-  "createdAt": "2001-05-19T02:00:00.000Z",
-  "createdBy": "createdBy.a3dw6@example.net",
-  "modifiedAt": "2006-01-29T02:00:00.000Z",
-  "modifiedBy": "modifiedBy.a3dw6@example.net"
+  "ID": "10334021-efb5-4450-a124-8f7f3f3cc5ab",
+  "description": "description-10334021",
+  "createdAt": "2010-06-12T02:00:00.000Z",
+  "createdBy": "createdBy.65hs5@example.org",
+  "modifiedAt": "2000-04-15T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.65hs5@example.net"
 }
 
 
 ### MovementType
 # @name MovementType_DELETE
-DELETE {{server}}/movements/MovementType/16954134-db68-4b57-80cd-d1c2ff6b6a4d
+DELETE {{server}}/movements/MovementType/10334021-efb5-4450-a124-8f7f3f3cc5ab
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 
-### Wallats
-# @name Wallats_GET
-GET {{server}}/movements/Wallats
+### Wallets
+# @name Wallets_GET
+GET {{server}}/movements/Wallets
 Authorization: Basic {{username}}:{{password}}
 
 
-### Wallats
-# @name Wallats_POST
-POST {{server}}/movements/Wallats
-Content-Type: application/json
-Authorization: Basic {{username}}:{{password}}
-
-{
-  "ID": "18734486-ddd6-46f2-92db-396294cbe474",
-  "name": "name-18734486",
-  "createdAt": "2020-05-30T02:00:00.000Z",
-  "createdBy": "createdBy.b5jme@example.com",
-  "modifiedAt": "2019-08-06T02:00:00.000Z",
-  "modifiedBy": "modifiedBy.b5jme@example.com"
-}
-
-
-### Wallats
-# @name Wallats_PATCH
-PATCH {{server}}/movements/Wallats/18734486-ddd6-46f2-92db-396294cbe474
+### Wallets
+# @name Wallets_POST
+POST {{server}}/movements/Wallets
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "18734486-ddd6-46f2-92db-396294cbe474",
-  "name": "name-18734486",
-  "createdAt": "2020-05-30T02:00:00.000Z",
-  "createdBy": "createdBy.b5jme@example.com",
-  "modifiedAt": "2019-08-06T02:00:00.000Z",
-  "modifiedBy": "modifiedBy.b5jme@example.com"
+  "ID": "26310087-52b9-49bf-9fc6-0296db55fc8d",
+  "name": "name-26310087",
+  "createdAt": "2002-11-30T02:00:00.000Z",
+  "createdBy": "createdBy.fnwzr@example.net",
+  "modifiedAt": "2014-10-10T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.fnwzr@example.com"
 }
 
 
-### Wallats
-# @name Wallats_DELETE
-DELETE {{server}}/movements/Wallats/18734486-ddd6-46f2-92db-396294cbe474
+### Wallets
+# @name Wallets_PATCH
+PATCH {{server}}/movements/Wallets/26310087-52b9-49bf-9fc6-0296db55fc8d
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "26310087-52b9-49bf-9fc6-0296db55fc8d",
+  "name": "name-26310087",
+  "createdAt": "2002-11-30T02:00:00.000Z",
+  "createdBy": "createdBy.fnwzr@example.net",
+  "modifiedAt": "2014-10-10T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.fnwzr@example.com"
+}
+
+
+### Wallets
+# @name Wallets_DELETE
+DELETE {{server}}/movements/Wallets/26310087-52b9-49bf-9fc6-0296db55fc8d
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
@@ -106,38 +106,38 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "13529868-d89c-43ce-ac45-56bb40dcf6ef",
-  "name": "name-13529868",
-  "icon": "icon-13529868",
-  "color": "r-13529868",
-  "createdAt": "2017-12-29T02:00:00.000Z",
-  "createdBy": "createdBy.81zpo@example.com",
-  "modifiedAt": "2020-04-29T02:00:00.000Z",
-  "modifiedBy": "modifiedBy.81zpo@example.com"
+  "ID": "94721448-a84e-4450-8fd1-ddc5b4695b51",
+  "name": "name-9472144",
+  "icon": "icon-9472144",
+  "color": "or-9472144",
+  "createdAt": "2004-04-25T02:00:00.000Z",
+  "createdBy": "createdBy.5n0r4@example.com",
+  "modifiedAt": "2005-04-09T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.5n0r4@example.net"
 }
 
 
 ### Categories
 # @name Categories_PATCH
-PATCH {{server}}/movements/Categories/13529868-d89c-43ce-ac45-56bb40dcf6ef
+PATCH {{server}}/movements/Categories/94721448-a84e-4450-8fd1-ddc5b4695b51
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "13529868-d89c-43ce-ac45-56bb40dcf6ef",
-  "name": "name-13529868",
-  "icon": "icon-13529868",
-  "color": "r-13529868",
-  "createdAt": "2017-12-29T02:00:00.000Z",
-  "createdBy": "createdBy.81zpo@example.com",
-  "modifiedAt": "2020-04-29T02:00:00.000Z",
-  "modifiedBy": "modifiedBy.81zpo@example.com"
+  "ID": "94721448-a84e-4450-8fd1-ddc5b4695b51",
+  "name": "name-9472144",
+  "icon": "icon-9472144",
+  "color": "or-9472144",
+  "createdAt": "2004-04-25T02:00:00.000Z",
+  "createdBy": "createdBy.5n0r4@example.com",
+  "modifiedAt": "2005-04-09T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.5n0r4@example.net"
 }
 
 
 ### Categories
 # @name Categories_DELETE
-DELETE {{server}}/movements/Categories/13529868-d89c-43ce-ac45-56bb40dcf6ef
+DELETE {{server}}/movements/Categories/94721448-a84e-4450-8fd1-ddc5b4695b51
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
@@ -161,23 +161,21 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "name": "name-3567729",
-  "amount": 98141745.49,
-  "date": "2013-02-04",
+  "name": "name-31434538",
+  "amount": 19744868.91,
   "type": {
-    "ID": "16954134-db68-4b57-80cd-d1c2ff6b6a4d"
+    "ID": "10334021-efb5-4450-a124-8f7f3f3cc5ab"
   },
-  "type_name": "type_name-3567729",
-  "wallat": {
-    "ID": "18734486-ddd6-46f2-92db-396294cbe474"
+  "type_name": "type_name-31434538",
+  "wallet": {
+    "ID": "26310087-52b9-49bf-9fc6-0296db55fc8d"
   },
-  "wallat_name": "wallat_name-3567729",
+  "wallet_name": "wallet_name-31434538",
   "category": {
-    "ID": "13529868-d89c-43ce-ac45-56bb40dcf6ef"
+    "ID": "94721448-a84e-4450-8fd1-ddc5b4695b51"
   },
-  "category_name": "category_name-3567729",
-  "criticality": 8,
-  "note": "note-3567729"
+  "category_name": "category_name-31434538",
+  "criticality": 41
 }
 
 
@@ -192,23 +190,21 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "name": "name-3567729",
-  "amount": 98141745.49,
-  "date": "2013-02-04",
+  "name": "name-31434538",
+  "amount": 19744868.91,
   "type": {
-    "ID": "16954134-db68-4b57-80cd-d1c2ff6b6a4d"
+    "ID": "10334021-efb5-4450-a124-8f7f3f3cc5ab"
   },
-  "type_name": "type_name-3567729",
-  "wallat": {
-    "ID": "18734486-ddd6-46f2-92db-396294cbe474"
+  "type_name": "type_name-31434538",
+  "wallet": {
+    "ID": "26310087-52b9-49bf-9fc6-0296db55fc8d"
   },
-  "wallat_name": "wallat_name-3567729",
+  "wallet_name": "wallet_name-31434538",
   "category": {
-    "ID": "13529868-d89c-43ce-ac45-56bb40dcf6ef"
+    "ID": "94721448-a84e-4450-8fd1-ddc5b4695b51"
   },
-  "category_name": "category_name-3567729",
-  "criticality": 8,
-  "note": "note-3567729"
+  "category_name": "category_name-31434538",
+  "criticality": 41
 }
 
 
